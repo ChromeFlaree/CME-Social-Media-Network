@@ -5,7 +5,15 @@ using namespace std;
 
 class User {
 public :
-    User(int id, string name) : id(id), name(name) {}
+    User(int id, string name) : id(id), name(name) {} // Constructor to initialize user with an unique ID and name
+
+    int getId() const { 
+        return id;
+    }
+
+    string getName() const {
+        return name;
+    }
 
     void setAge(int age) {
         this->age = age;
