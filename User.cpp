@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
 #include <unordered_set>
+using namespace std;
 
 class User {
 public :
-    User(int id, std::string name) : id(id), name(name) {}
+    User(int id, string name) : id(id), name(name) {}
 
     void setAge(int age) {
         this->age = age;
@@ -14,11 +15,11 @@ public :
         this->height = height;
     }
 
-    void setGender(std::string gender) {
+    void setGender(string gender) {
         this->gender = gender;
     }
 
-    void addHobby(std::string hobby) {
+    void addHobby(string hobby) {
         hobbies.insert(hobby);
     }
 
@@ -28,10 +29,10 @@ public :
 
 private :
     int id;
-    std::string name;
+    string name;
     int age = 0;
     double height = 0.0;
-    std::string gender = "";
-    std::unordered_set<std::string> hobbies;
-    std::unordered_set<User*> friends;
+    string gender = "";
+    unordered_set<std::string> hobbies;
+    unordered_set<User*> friends;
 };
