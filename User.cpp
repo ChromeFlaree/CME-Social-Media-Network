@@ -33,6 +33,6 @@ private :
     int age = 0;
     double height = 0.0;
     string gender = "";
-    unordered_set<std::string> hobbies;
+    unordered_set<string> hobbies;
     unordered_set<User*> friends;
 };
