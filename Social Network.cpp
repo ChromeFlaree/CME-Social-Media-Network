@@ -6,7 +6,6 @@
 
 class SocialNetwork {
 public:
-
     void addUser(int id, string name, int age, string gender) {
         User* newUser = new User(id, name, age, gender);
         users[id] = newUser;
