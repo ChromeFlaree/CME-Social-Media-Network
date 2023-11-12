@@ -5,7 +5,23 @@ using namespace std;
 
 class User {
 public :
-    User(int id, string name) : id(id), name(name) {} // Constructor to initialize user with an unique ID and name
+    User(int id, string name, int age, string gender) : id(id), name(name), age(age), gender(gender) {} // Constructor to initialize user with an unique ID and name
+
+    int getId() const { 
+        return id;
+    }
+
+    string getName() const {
+        return name;
+    }
+
+    int getAge() const {
+        return age;
+    }
+
+    string getGender() const {
+        return gender;
+    }
 
     int getId() const { 
         return id;
@@ -38,9 +54,10 @@ public :
 private :
     int id;
     string name;
-    int age = 0;
+    int age;
+    string gender;
     double height = 0.0;
-    string gender = "";
     unordered_set<string> hobbies;
     unordered_set<User*> friends;
+    friend class SocialNetwork;
 };
