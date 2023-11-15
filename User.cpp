@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
 #include <unordered_set>
+#include <unordered_map>
+#include <vector>
 using namespace std;
 
 class User {
 public :
-    User(int id, string name, int age, string gender) : id(id), name(name), age(age), gender(gender) {} // Constructor to initialize user with an unique ID and name
+    User(int id, string name, int age, string gender) : id(id), name(name), age(age), gender(gender) {}
 
     int getId() const { 
         return id;
@@ -23,24 +25,8 @@ public :
         return gender;
     }
 
-    int getId() const { 
-        return id;
-    }
-
-    string getName() const {
-        return name;
-    }
-
-    void setAge(int age) {
-        this->age = age;
-    }
-
     void setHeight(double height) {
         this->height = height;
-    }
-
-    void setGender(string gender) {
-        this->gender = gender;
     }
 
     void addHobby(string hobby) {
@@ -49,6 +35,19 @@ public :
 
     void addFriend(User* friendUser) {
         friends.insert(friendUser);
+        friendUser->friends.insert(this);
+    }
+
+    unordered_set<string> getHobbies() const {
+        return hobbies;
+    }
+
+    unordered_set<int> getFriendIds() const {
+        unordered_set<int> friendIds;
+        for (const auto friendUser : friends) {
+            friendIds.insert(friendUser->getId());
+        }
+        return friendIds;
     }
 
 private :
