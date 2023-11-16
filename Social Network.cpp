@@ -6,13 +6,12 @@
 
 class SocialNetwork {
 public:
-    void addUser(int id, string name, int age, string gender) {
-        if (users.find(id) == users.end()) {
-            User* newUser = new User(id, name, age, gender);
-            users[id] = newUser;
+    void addUser(User* user) {
+        if (users.find(user->getId()) == users.end()) {
+            users[user->getId()] = user;
         }
         else {
-            cout << "Error : User with ID " << id << " already exists. Choose a unique ID." << endl;
+            cout << "Error : User with ID " << user->getId() << " already exists. Choose a unique ID." << endl;
         }
     }
 
@@ -21,15 +20,6 @@ public:
         if (it != users.end()) {
             delete it->second;
             users.erase(it);
-        }
-    }
-
-    void addFriendship(int userId1, int userId2) {
-        auto user1It = users.find(userId1);
-        auto user2It = users.find(userId2);
-        if (user1It != users.end() && user2It != users.end()) {
-            user1It->second->addFriend(user2It->second);
-            user2It->second->addFriend(user1It->second);
         }
     }
 
@@ -67,7 +57,7 @@ public:
         unordered_set<int> friendIds;
         auto it = users.find(userId);
         if (it != users.end()) {
-            const auto& friends = it->second->getFriendIds();
+            const auto friends = it->second->getFriendIds();
             friendIds.insert(friends.begin(), friends.end());
         }
         return friendIds;
