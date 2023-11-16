@@ -29,8 +29,8 @@ public :
         this->height = height;
     }
 
-    void addHobby(string hobby) {
-        hobbies.insert(hobby);
+    void addHobby(const unordered_set<string> newHobbies) {
+    hobbies.insert(newHobbies.begin(), newHobbies.end());
     }
 
     void addFriend(User* friendUser) {
