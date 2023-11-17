@@ -3,9 +3,10 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <vector>
+#include <memory>
 using namespace std;
 
-class User {
+class User : public enable_shared_from_this<User> {
 public :
     User(int id, string name, int age, string gender) : id(id), name(name), age(age), gender(gender) {}
 
@@ -33,9 +34,20 @@ public :
     hobbies.insert(newHobbies.begin(), newHobbies.end());
     }
 
-    void addFriend(User* friendUser) {
+    void addFriend(const shared_ptr<User> friendUser) {
         friends.insert(friendUser);
-        friendUser->friends.insert(this);
+        friendUser->friends.insert(shared_from_this());
+    }
+
+    void removeFriend(const shared_ptr<User> friendUser) {
+        friends.erase(friendUser);
+        friendUser->friends.erase(shared_from_this());
+    }
+
+    void blockUser(const shared_ptr<User> blockedUser) {
+        blockedUsers.insert(blockedUser);
+        removeFriend(blockedUser);
+        blockedUser->removeFriend(shared_from_this());
     }
 
     unordered_set<string> getHobbies() const {
@@ -57,6 +69,7 @@ private :
     string gender;
     double height = 0.0;
     unordered_set<string> hobbies;
-    unordered_set<User*> friends;
+    unordered_set<shared_ptr<User>> friends;
+    unordered_set<shared_ptr<User>> blockedUsers;
     friend class SocialNetwork;
 };
