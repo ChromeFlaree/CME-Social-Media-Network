@@ -50,6 +50,19 @@ public :
         blockedUser->removeFriend(shared_from_this());
     }
 
+    void suggestFriends() const {
+        cout << "Suggested friends for " << name << ":" << endl;
+        for (const auto friendUser : friends) {
+            if (blockedUsers.find(friendUser) == blockedUsers.end()) {
+                for (const auto friendOfFriend : friendUser->friends) {
+                    if (blockedUsers.find(friendOfFriend) == blockedUsers.end() && friendOfFriend != shared_from_this()) {
+                        cout << "User ID : " << friendOfFriend->getId() << ", Name : " << friendOfFriend->getName() << endl;
+                    }
+                }
+            }
+        }
+    }
+
     unordered_set<string> getHobbies() const {
         return hobbies;
     }
