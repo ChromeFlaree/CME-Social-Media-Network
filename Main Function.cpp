@@ -31,7 +31,11 @@ int main() {
     user1->blockUser(user4);
 
     user2->suggestFriends();
-    cout << endl;
+
+    user1->printDetails();
+    user2->printDetails();
+    user3->printDetails();
+    user4->printDetails();
 
     cout << "Users with name 'Sourasish' :" << endl;
     vector<shared_ptr<User>> usersByName = socialNetwork.searchByName("Sourasish");
