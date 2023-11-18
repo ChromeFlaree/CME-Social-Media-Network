@@ -1,0 +1,31 @@
+Sourasish blocked user with ID 4 : Sagnik
+
+Suggested friends for Anushka :
+User ID : 3, Name : Aviroopa
+
+Users with name 'Sourasish' :
+User ID: 1, Name: Sourasish
+
+Users with age 30 :
+User ID: 4, Name: Sagnik
+
+Users with hobbies 'Jogging' :
+User ID: 4, Name: Sagnik
+User ID: 3, Name: Aviroopa
+
+Friends of Sourasish : 3 2
+
+Friends of Sagnik : 3
+
+Before deleting user with ID 1 :
+User ID : 4, Name : Sagnik
+User ID : 3, Name : Aviroopa
+User ID : 2, Name : Anushka
+User ID : 1, Name : Sourasish
+
+Deleting user with ID 1 : Sourasish
+
+After deleting user with ID 1 :
+User ID : 4, Name : Sagnik
+User ID : 3, Name : Aviroopa
+User ID : 2, Name : Anushka
