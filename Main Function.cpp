@@ -27,6 +27,21 @@ int main() {
     user1->addFriend(user4);
     user1->addFriend(user3);
     user4->addFriend(user3);
+
+    auto groupChat = make_shared<GroupChat>();
+
+    user1->joinGroupChat(groupChat);
+    user2->joinGroupChat(groupChat);
+    user3->joinGroupChat(groupChat);
+    user4->joinGroupChat(groupChat);
+
+    user1->sendMessageToGroup(groupChat, "Hi, thanks for having me here!");
+    user2->sendMessageToGroup(groupChat, "Hello, Sourasish!");
+    user3->sendMessageToGroup(groupChat, "Hey, I have also joined the chat!");
+    user4->sendMessageToGroup(groupChat, "Hello guys!");
+    user1->sendMessageToGroup(groupChat, "Bye");
+
+    user1->leaveGroupChat(groupChat);
     
     user1->blockUser(user4);
 
