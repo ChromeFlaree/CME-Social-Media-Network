@@ -69,6 +69,9 @@ int main() {
     }
     cout << endl;
 
+    user1->unblockUser(user4);
+    user1->printDetails();
+
     cout << "\nBefore deleting user with ID 1 : " << endl;
     for (const auto userPair : socialNetwork.getUsers()) {
         cout << "User ID : " << userPair.first << ", Name : " << userPair.second->getName() << endl;
