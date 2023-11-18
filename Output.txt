@@ -37,6 +37,13 @@ Friends of Sourasish : 3 2
 
 Friends of Sagnik : 3
 
+Sourasish unblocked user with ID 4 : Sagnik
+
+User ID : 1, Name : Sourasish, Age : 22, Gender : Male
+Hobbies : Reading 
+Friends : Sagnik Aviroopa Anushka
+Blocked Users :
+
 Before deleting user with ID 1 :
 User ID : 4, Name : Sagnik
 User ID : 3, Name : Aviroopa
