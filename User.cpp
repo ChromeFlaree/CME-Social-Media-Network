@@ -76,6 +76,28 @@ public :
         return friendIds;
     }
 
+     void printDetails() const {
+        cout << "User ID : " << id << ", Name : " << name << ", Age : " << age << ", Gender : " << gender << endl;
+
+        cout << "Hobbies : ";
+        for (const auto hobby : hobbies) {
+            cout << hobby << " ";
+        }
+        cout << endl;
+
+        cout << "Friends : ";
+        for (const auto friendUser : friends) {
+            cout << friendUser->getName() << " ";
+        }
+        cout << endl;
+
+        cout << "Blocked Users : ";
+        for (const auto blockedUser : blockedUsers) {
+            cout << blockedUser->getName() << " ";
+        }
+        cout << endl;
+    }
+
 private :
     int id;
     string name;
