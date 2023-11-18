@@ -8,18 +8,18 @@ using namespace std;
 
 class GroupChat {
 public:
-    void addUser(const shared_ptr<User> user) {
+    void addUser(const shared_ptr<User> user) { // Adding users to the group to chat
         members.insert(user);
     }
 
-    void removeUser(const shared_ptr<User> user) {
+    void removeUser(const shared_ptr<User> user) { // Removing users from the group
         members.erase(user);
     }
 
-    void sendMessage(const shared_ptr<User> sender, const string message) const {
+    void sendMessage(const shared_ptr<User> sender, const string message) const { // Function to send messages in the group
         for (const auto member : members) {
             if (member != sender) {
-                cout << sender->getName() << " in group chat : " << message << endl;
+                cout << sender->getName() << " in group chat : " << message << endl; // Displaying message along with name of sender
             }
         }
     }
