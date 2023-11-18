@@ -1,3 +1,5 @@
+GROUP CHAT OUTPUT -
+
 Sourasish joined the group chat.
 Anushka joined the group chat.
 Aviroopa joined the group chat.
@@ -11,10 +13,22 @@ Sourasish in group chat : "Bye"
 
 Sourasish left the group chat.
 
+-------------------------------------------------------------------------------------------------------------------------
+
+BLOCK FRIEND FUNCTION OUTPUT WHEN USER 1 BLOCKS USER 4 -
+
 Sourasish blocked user with ID 4 : Sagnik
+
+-------------------------------------------------------------------------------------------------------------------------
+
+FRIEND SUGGESTION FUNCTION OUTPUT FOR USER ID 2 -
 
 Suggested friends for Anushka :
 User ID : 3, Name : Aviroopa
+
+-------------------------------------------------------------------------------------------------------------------------
+
+PRINT DETAILS FUNCTION OUTPUT TO DISPLAY INFORMATION OF USERS -
 
 User ID : 1, Name : Sourasish, Age : 22, Gender : Male
 Hobbies : Reading 
@@ -36,26 +50,54 @@ Hobbies : Gardening Jogging
 Friends : Aviroopa
 Blocked Users :
 
+-------------------------------------------------------------------------------------------------------------------------
+
+SEARCH BY NAME FUNCTION OUTPUT -
+
 Users with name 'Sourasish' :
 User ID: 1, Name: Sourasish
 
+-------------------------------------------------------------------------------------------------------------------------
+
+SEARCH BY AGE FUNCTION OUTPUT -
+
 Users with age 30 :
 User ID: 4, Name: Sagnik
+
+-------------------------------------------------------------------------------------------------------------------------
+
+SEARCH BY HOBBIES FUNCTION OUTPUT -
 
 Users with hobbies 'Jogging' :
 User ID: 4, Name: Sagnik
 User ID: 3, Name: Aviroopa
 
+-------------------------------------------------------------------------------------------------------------------------
+
+GET FRIENDS FUNCTION OUTPUT TO DISPLAY IDS OF FRIENDS OF USERS -
+
 Friends of Sourasish : 3 2
 
 Friends of Sagnik : 3
 
+-------------------------------------------------------------------------------------------------------------------------
+
+UNBLOCK FRIEND FUNCTION OUTPUT WHEN USER 1 UNBLOCKS USER 4 -
+
 Sourasish unblocked user with ID 4 : Sagnik
+
+-------------------------------------------------------------------------------------------------------------------------
+
+PRINT DETAILS OUTPUT FOR USER 1 POST UNBLOCKING USER 4 -
 
 User ID : 1, Name : Sourasish, Age : 22, Gender : Male
 Hobbies : Reading 
 Friends : Sagnik Aviroopa Anushka
 Blocked Users :
+
+-------------------------------------------------------------------------------------------------------------------------
+
+DELETE USER FUNCTION OUTPUT -
 
 Before deleting user with ID 1 :
 User ID : 4, Name : Sagnik
@@ -69,3 +111,5 @@ After deleting user with ID 1 :
 User ID : 4, Name : Sagnik
 User ID : 3, Name : Aviroopa
 User ID : 2, Name : Anushka
+
+-------------------------------------------------------------------------------------------------------------------------
