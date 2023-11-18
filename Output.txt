@@ -1,3 +1,16 @@
+Sourasish joined the group chat.
+Anushka joined the group chat.
+Aviroopa joined the group chat.
+Sagnik joined the group chat.
+
+Sourasish in group chat : "Hi, thanks for having me here!"
+Anushka in group chat : "Hello, Sourasish!"
+Aviroopa in group chat : "Hey, I have also joined the chat!"
+Sagnik in group chat : "Hello guys!"
+Sourasish in group chat : "Bye"
+
+Sourasish left the group chat.
+
 Sourasish blocked user with ID 4 : Sagnik
 
 Suggested friends for Anushka :
