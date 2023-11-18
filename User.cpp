@@ -70,6 +70,22 @@ public :
         }
     }
 
+    void joinGroupChat(const shared_ptr<GroupChat> group) {    
+        group->addUser(shared_from_this());
+        groupChats.insert(group);
+        cout << getName() << " joined the group chat." << endl;
+    }
+
+    void leaveGroupChat(const shared_ptr<GroupChat> group) {
+        group->removeUser(shared_from_this());
+        groupChats.erase(group);
+        cout << getName() << " left the group chat." << endl;
+    }
+
+    void sendMessageToGroup(const shared_ptr<GroupChat> group, const string message) {
+        group->sendMessage(shared_from_this(), message);
+    }
+
     unordered_set<string> getHobbies() const {
         return hobbies;
     }
@@ -89,19 +105,16 @@ public :
         for (const auto hobby : hobbies) {
             cout << hobby << " ";
         }
-        cout << endl;
 
         cout << "Friends : ";
         for (const auto friendUser : friends) {
             cout << friendUser->getName() << " ";
         }
-        cout << endl;
 
         cout << "Blocked Users : ";
         for (const auto blockedUser : blockedUsers) {
             cout << blockedUser->getName() << " ";
         }
-        cout << endl;
     }
 
 private :
@@ -113,5 +126,6 @@ private :
     unordered_set<string> hobbies;
     unordered_set<shared_ptr<User>> friends;
     unordered_set<shared_ptr<User>> blockedUsers;
+    unordered_set<shared_ptr<GroupChat>> groupChats;
     friend class SocialNetwork;
 };
