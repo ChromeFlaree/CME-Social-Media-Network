@@ -48,10 +48,11 @@ public :
         blockedUsers.insert(blockedUser);
         removeFriend(blockedUser);
         blockedUser->removeFriend(shared_from_this());
+        cout << getName() << " blocked user with ID " << blockedUser->getId() << " : " << blockedUser->getName() << endl;
     }
 
     void suggestFriends() const {
-        cout << "Suggested friends for " << name << ":" << endl;
+        cout << "Suggested friends for " << name << " : " << endl;
         for (const auto friendUser : friends) {
             if (blockedUsers.find(friendUser) == blockedUsers.end()) {
                 for (const auto friendOfFriend : friendUser->friends) {
