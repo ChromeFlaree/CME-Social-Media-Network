@@ -20,8 +20,16 @@ public:
     void deleteUser(int id) {
         auto it = users.find(id);
         if (it != users.end()) {
+            cout << "Deleting user with ID " << id << " : " << it->second->getName() << endl;
             users.erase(it);
         }
+        else {
+            cout << "User with ID " << id << " not found." << endl;
+        }
+    }
+
+    unordered_map<int, shared_ptr<User>> getUsers() const {
+        return users;
     }
 
     vector<shared_ptr<User>> searchByName(const string name) {
