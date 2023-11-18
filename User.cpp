@@ -51,6 +51,12 @@ public :
         cout << getName() << " blocked user with ID " << blockedUser->getId() << " : " << blockedUser->getName() << endl;
     }
 
+    void unblockUser(const shared_ptr<User> unblockedUser) {
+        blockedUsers.erase(unblockedUser);
+        addFriend(unblockedUser);
+        cout << getName() << " unblocked user with ID " << unblockedUser->getId() << " : " << unblockedUser->getName() << endl;
+    }
+
     void suggestFriends() const {
         cout << "Suggested friends for " << name << " : " << endl;
         for (const auto friendUser : friends) {
