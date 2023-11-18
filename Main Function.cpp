@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 using namespace std;
+
 int main() {
 
     SocialNetwork socialNetwork;
@@ -32,7 +33,7 @@ int main() {
     user2->suggestFriends();
     cout << endl;
 
-    cout << "Users with name 'Sourasish':" << endl;
+    cout << "Users with name 'Sourasish' :" << endl;
     vector<shared_ptr<User>> usersByName = socialNetwork.searchByName("Sourasish");
     for (const auto user : usersByName) {
         cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
@@ -64,7 +65,17 @@ int main() {
     }
     cout << endl;
 
+    cout << "\nBefore deleting user with ID 1 : " << endl;
+    for (const auto userPair : socialNetwork.getUsers()) {
+        cout << "User ID : " << userPair.first << ", Name : " << userPair.second->getName() << endl;
+    }
+
     socialNetwork.deleteUser(1);
-    
+
+    cout << "\nAfter deleting user with ID 1 : " << endl;
+    for (const auto userPair : socialNetwork.getUsers()) {
+        cout << "User ID : " << userPair.first << ", Name : " << userPair.second->getName() << endl;
+    }
+
     return 0;
 }
