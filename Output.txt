@@ -3,6 +3,26 @@ Sourasish blocked user with ID 4 : Sagnik
 Suggested friends for Anushka :
 User ID : 3, Name : Aviroopa
 
+User ID : 1, Name : Sourasish, Age : 22, Gender : Male
+Hobbies : Reading 
+Friends : Aviroopa Anushka 
+Blocked Users : Sagnik 
+
+User ID : 2, Name : Anushka, Age : 20, Gender : Female
+Hobbies : 
+Friends : Sourasish 
+Blocked Users : 
+
+User ID : 3, Name : Aviroopa, Age : 21, Gender : Female
+Hobbies : Jogging 
+Friends : Sagnik Sourasish 
+Blocked Users : 
+
+User ID : 4, Name : Sagnik, Age : 30, Gender : Male
+Hobbies : Gardening Jogging
+Friends : Aviroopa
+Blocked Users :
+
 Users with name 'Sourasish' :
 User ID: 1, Name: Sourasish
 
