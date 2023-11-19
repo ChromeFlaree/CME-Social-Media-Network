@@ -70,6 +70,12 @@ public :
         }
     }
 
+    void createGroup(const string groupName) {
+        auto group = make_shared<GroupChat>();
+        groups.insert(group);
+        cout << getName() << " created a group named " << groupName << "." << endl;
+    }
+
     void joinGroupChat(const shared_ptr<GroupChat> group) { // Joining group for chatting with other users
         group->addUser(shared_from_this());
         groupChats.insert(group);
