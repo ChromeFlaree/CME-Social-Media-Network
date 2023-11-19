@@ -128,7 +128,11 @@ public :
         }
     }
 
-     void printDetails() const { // Printing all the information about a particular user
+    const unordered_set<shared_ptr<GroupChat>> getGroups() const {
+        return groups;
+    }
+
+    void printDetails() const { // Printing all the information about a particular user
         cout << "User ID : " << id << ", Name : " << name << ", Age : " << age << ", Gender : " << gender << endl;
 
         cout << "Hobbies : ";
