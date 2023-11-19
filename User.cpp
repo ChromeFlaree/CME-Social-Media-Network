@@ -70,7 +70,7 @@ public :
         }
     }
 
-    void createGroup(const string groupName) {
+    void createGroup(const string groupName) { // Creating new group
         auto group = make_shared<GroupChat>();
         groups.insert(group);
         cout << getName() << " created a group named " << groupName << "." << endl;
@@ -133,5 +133,7 @@ private : // Private data members
     unordered_set<shared_ptr<User>> friends;
     unordered_set<shared_ptr<User>> blockedUsers;
     unordered_set<shared_ptr<GroupChat>> groupChats;
+    unordered_set<shared_ptr<GroupChat>> groups;
     friend class SocialNetwork; // Friend class 
+    friend class GroupChat;
 };
