@@ -27,23 +27,21 @@ int main() { // Main method
     user1->addFriend(user4);
     user1->addFriend(user3);
     user4->addFriend(user3);
-
-    auto groupChat = make_shared<GroupChat>(); 
-
-    user1->joinGroupChat(groupChat); // Adding users to group chat
-    user2->joinGroupChat(groupChat);
-    user3->joinGroupChat(groupChat);
-    user4->joinGroupChat(groupChat);
-
-    user1->sendMessageToGroup(groupChat, "Hi, thanks for having me here!"); // Sending messages in the group
-    user2->sendMessageToGroup(groupChat, "Hello, Sourasish!");
-    user3->sendMessageToGroup(groupChat, "Hey, I have also joined the chat!");
-    user4->sendMessageToGroup(groupChat, "Hello guys!");
-    user1->sendMessageToGroup(groupChat, "Bye");
-
-    user1->leaveGroupChat(groupChat); // User 1 leaves from the group
     
     user1->blockUser(user4); // User 1 blocks User 4
+
+    user1->createGroup("Friends Group"); // User 1 creates new group for messaging
+    user2->joinGroup(*(user1->getGroups().begin())); // Other users joining the group
+    user3->joinGroup(*(user1->getGroups().begin()));
+    user4->joinGroup(*(user1->getGroups().begin())); // User 4 is blocked thus cannot join the group chat
+
+    user1->sendMessageToGroup(*(user1->getGroups().begin()), "Hello, friends!"); // Sending messages
+    user2->sendMessageToGroup(*(user1->getGroups().begin()), "Hello Sourasish");
+    user4->sendMessageToGroup(*(user1->getGroups().begin()), "Hello");
+
+    user2->leaveGroup(*(user1->getGroups().begin())); // User 2 leaves the group chat
+    user4->leaveGroup(*(user1->getGroups().begin()));
+    user2->sendMessageToGroup(*(user1->getGroups().begin()), "Testing Message"); // User 2 trying to send message after leaving the group
 
     user2->suggestFriends(); // Calling method to suggest friends to User 2
 
