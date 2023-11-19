@@ -8,7 +8,7 @@ using namespace std;
 
 class GroupChat {
 public:
-    void GroupChat::addUser(const shared_ptr<User> user) {
+    void addUser(const shared_ptr<User> user) {
         if (!blockedUsers.count(user) && members.insert(user).second) {
             cout << user->getName() << " joined the group chat." << endl;
         } 
@@ -17,36 +17,27 @@ public:
         }
     }
 
-    void removeUser(const shared_ptr<User> user) { 
-        members.erase(user);
-        blockedUsers.erase(user);
-    }
-
-    void GroupChat::blockUser(const shared_ptr<User> blocker, const shared_ptr<User> blockedUser) {
-        if (members.count(blocker) && members.count(blockedUser)) {
-            blockedUsers.insert(blockedUser);
-            blockedUser->removeFriend(blocker);
-            cout << blocker->getName() << " blocked " << blockedUser->getName() << " in the group chat." << endl;
-        } 
-        else {
-            cerr << "Error : Unable to block user. Users must be members of the group." << endl;
+    void leaveGroup(const shared_ptr<User> user) {
+        if (members.count(user) > 0) {
+            members.erase(user);
+            blockedUsers.erase(user);
+            cout << user->getName() << " left the group." << endl;
+        } else {
+            cerr << "Error: " << user->getName() << " cannot leave the group. User must be a member of the group." << endl;
         }
     }
 
     void GroupChat::sendMessage(const shared_ptr<User> sender, const string message) const {
-        for (const auto member : members) {
-            if (member != sender && !sender->isBlocked(member) && sender->isFriend(member)) {
-                cout << sender->getName() << " in group chat: " << message << endl;
-            }
+        if (members.count(sender) > 0) {
+            cout << sender->getName() << " in group " << " : " << message << endl;
+        } else {
+            cerr << "Error: " << sender->getName() << " cannot send message. User must be a member of the group." << endl;
         }
-    }
-
-    bool GroupChat::isUserInGroup(const shared_ptr<User> user) const {
-        return members.count(user) > 0;
     }
 
 private:
     unordered_set<shared_ptr<User>> members;
     unordered_set<shared_ptr<User>> blockedUsers;
+    shared_ptr<User> creator;
     friend class User;
 };
