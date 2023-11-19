@@ -70,26 +70,12 @@ public :
         }
     }
 
-    void createGroup(const string groupName) { // Creating new group
-        auto group = make_shared<GroupChat>();
-        groups.insert(group);
-        cout << getName() << " created a group named " << groupName << "." << endl;
+    bool isBlocked(const shared_ptr<User> user) const {
+        return blockedUsers.count(user) > 0;
     }
 
-    void joinGroupChat(const shared_ptr<GroupChat> group) { // Joining group for chatting with other users
-        group->addUser(shared_from_this());
-        groupChats.insert(group);
-        cout << getName() << " joined the group chat." << endl; // Displaying that the user has joined the group
-    }
-
-    void leaveGroupChat(const shared_ptr<GroupChat> group) { // Leaving the group
-        group->removeUser(shared_from_this());
-        groupChats.erase(group);
-        cout << getName() << " left the group chat." << endl; // Displaying message that user has left the group
-    }
-
-    void sendMessageToGroup(const shared_ptr<GroupChat> group, const string message) { // Send message in the group
-        group->sendMessage(shared_from_this(), message);
+    bool isFriend(const shared_ptr<User> user) const {
+        return friends.count(user) > 0;
     }
 
     unordered_set<string> getHobbies() const { // Return the list of hobbies of a user
@@ -102,6 +88,44 @@ public :
             friendIds.insert(friendUser->getId());
         }
         return friendIds;
+    }
+
+    void createGroup(const string groupName) {
+        auto group = make_shared<GroupChat>();
+        group->creator = shared_from_this();
+        group->members.insert(shared_from_this());
+        groups.insert(group);
+        cout << getName() << " created a group named " << groupName << "." << endl;
+    }
+
+    void joinGroup(const shared_ptr<GroupChat> group) {
+        if (group->creator == shared_from_this() || isFriend(group->creator)) {
+            group->members.insert(shared_from_this());
+            groups.insert(group);
+            cout << getName() << " joined the group chat." << endl;
+        } else {
+            cerr << "Error: " << getName() << " cannot join the group. User must be a friend of the group creator." << endl;
+        }
+    }
+
+    void leaveGroup(const shared_ptr<GroupChat> group) {
+        if (groups.count(group) > 0) {
+            group->leaveGroup(shared_from_this());
+        } else {
+            cerr << "Error: " << getName() << " cannot leave the group. User must be a member of the group." << endl;
+        }
+    }
+
+    void sendMessageToGroup(const shared_ptr<GroupChat> group, const string message) {
+        if (groups.count(group)) {
+            if (group->members.count(shared_from_this()) > 0) {
+                group->sendMessage(shared_from_this(), message);
+            } else {
+                cerr << "Error : " << getName() << " cannot send message. User must be a member of the group." << endl;
+            }
+        } else {
+            cerr << "Error : " << getName() << " cannot send message. User must be a member of the group." << endl;
+        }
     }
 
      void printDetails() const { // Printing all the information about a particular user
