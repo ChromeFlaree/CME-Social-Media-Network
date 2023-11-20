@@ -1,5 +1,6 @@
 #include "GroupChat.h"
 #include "User.h"
+using namespace std;
 
 void GroupChat::addUser(const shared_ptr<User> user) {
     if (!blockedUsers.count(user) && members.insert(user).second) {
