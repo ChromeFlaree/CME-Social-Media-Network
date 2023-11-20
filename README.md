@@ -14,6 +14,11 @@ This project simulates a basic social network system where users can create acco
   - Create and join group chats
   - Send messages to group members
   - Leave group chats
+ 
+- **Posts**
+  - Create and share posts
+  - Friends can like and comment on post
+  - Display post information
 
 - **Social Network Search**
   - Search users by name, age, and hobbies
