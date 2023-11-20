@@ -10,6 +10,7 @@
 using namespace std;
 
 class GroupChat;
+class Post;
 
 class User : public std::enable_shared_from_this<User> {
 public :
