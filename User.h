@@ -53,8 +53,10 @@ private :
     unordered_set<shared_ptr<User>> blockedUsers;
     unordered_set<shared_ptr<GroupChat>> groupChats;
     unordered_set<shared_ptr<GroupChat>> groups;
+    vector<shared_ptr<Post>> posts;
     friend class GroupChat;
     friend class SocialNetwork;
+    friend class Post;
 };
 
 #endif
