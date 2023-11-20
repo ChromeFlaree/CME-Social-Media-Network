@@ -13,7 +13,7 @@ class GroupChat;
 class Post;
 
 class User : public std::enable_shared_from_this<User> {
-public :
+public:
     User(int id, string name, int age, string gender);
 
     int getId() const;
@@ -42,7 +42,11 @@ public :
     void leaveGroup(const shared_ptr<GroupChat> group);
     void sendMessageToGroup(const shared_ptr<GroupChat> group, const string message);
 
-private :
+    void createPost(const string content);
+    void displayPosts() const;
+    const vector<shared_ptr<Post>> getPosts() const;
+
+private:
     int id;
     string name;
     int age;
