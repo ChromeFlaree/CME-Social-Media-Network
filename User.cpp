@@ -1,6 +1,7 @@
 #include "User.h"
 #include "GroupChat.h"
 #include "SocialNetwork.h"
+using namespace std;
 
 User::User(int id, string name, int age, string gender) : id(id), name(name), age(age), gender(gender) {}
 
