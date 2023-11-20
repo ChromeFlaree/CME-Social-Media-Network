@@ -149,3 +149,20 @@ void User::sendMessageToGroup(const shared_ptr<GroupChat> group, const string me
         cerr << "Error: " << getName() << " cannot send message. User must be a member of the group." << endl;
     }
 }
+
+const vector<shared_ptr<Post>> User::getPosts() const {
+    return posts;
+}
+
+void User::createPost(const string content) {
+    auto post = make_shared<Post>(shared_from_this(), content);
+    posts.push_back(post);
+    cout << getName() << " created a new post." << endl;
+}
+
+void User::displayPosts() const {
+    cout << "Posts by " << getName() << " : " << endl;
+    for (const auto post : posts) {
+        post->displayDetails();
+    }
+}
