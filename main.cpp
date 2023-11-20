@@ -1,5 +1,6 @@
 #include "User.h"
 #include "GroupChat.h"
+#include "Post.h"
 #include "SocialNetwork.h"
 
 int main() {
@@ -51,6 +52,13 @@ int main() {
     cout << endl;
     user4->printDetails();
     cout << endl;
+
+    user1->createPost("Enjoying a sunny day!");
+    user1->getPosts().front()->addLike(user2);
+    user1->getPosts().front()->addLike(user3);
+    user1->getPosts().front()->addLike(user4);
+    user1->getPosts().front()->addComment(user2, "Looks amazing!");
+    user1->displayPosts();
 
     cout << "Users with name 'Sourasish' :" << endl;
     vector<shared_ptr<User>> usersByName = socialNetwork.searchByName("Sourasish");
