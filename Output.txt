@@ -27,6 +27,7 @@ FRIEND SUGGESTION FUNCTION OUTPUT FOR USER ID 2 -
 
 Suggested friends for Anushka :
 User ID : 3, Name : Aviroopa
+User ID : 7, Name : Oishik
 
 -------------------------------------------------------------------------------------------------------------------------
 
@@ -34,12 +35,12 @@ PRINT DETAILS FUNCTION OUTPUT TO DISPLAY INFORMATION OF USERS -
 
 User ID : 1, Name : Sourasish, Age : 22, Gender : Male
 Hobbies : Reading 
-Friends : Aviroopa Anushka 
+Friends : Aviroopa Anushka Oishik Shinjini
 Blocked Users : Sagnik 
 
 User ID : 2, Name : Anushka, Age : 20, Gender : Female
 Hobbies : 
-Friends : Sourasish 
+Friends : Sourasish Shinjini
 Blocked Users : 
 
 User ID : 3, Name : Aviroopa, Age : 21, Gender : Female
@@ -60,15 +61,22 @@ Sourasish created a new post.
 
 Anushka liked the post.
 Aviroopa liked the post.
+Oishik liked the post.
 Error: Sagnik cannot like the post.
 
 Anushka commented on the post: Looks amazing!
 
 Post by Sourasish : Enjoying a sunny day!
-Likes : 2
-Aviroopa Anushka
+Likes : 3
+Aviroopa Anushka Oishik
 Comments : 1
 Anushka : Looks amazing!
+
+Sourasish has deleted the post.
+Error : Cannot like since post has been deleted.
+Error : Cannot comment since post has been deleted.
+Posts by Sourasish :
+This post has been deleted.
 
 -------------------------------------------------------------------------------------------------------------------------
 
@@ -83,12 +91,14 @@ SEARCH BY AGE FUNCTION OUTPUT -
 
 Users with age 30 :
 User ID: 4, Name: Sagnik
+User ID: 7, Name: Oishik
 
 -------------------------------------------------------------------------------------------------------------------------
 
 SEARCH BY HOBBIES FUNCTION OUTPUT -
 
 Users with hobbies 'Jogging' :
+User ID: 7, Name: Oishik
 User ID: 4, Name: Sagnik
 User ID: 3, Name: Aviroopa
 
@@ -96,7 +106,7 @@ User ID: 3, Name: Aviroopa
 
 GET FRIENDS FUNCTION OUTPUT TO DISPLAY IDS OF FRIENDS OF USERS -
 
-Friends of Sourasish : 3 2
+Friends of Sourasish : 7 6 3 2
 
 Friends of Sagnik : 3
 
@@ -112,7 +122,7 @@ PRINT DETAILS OUTPUT FOR USER 1 POST UNBLOCKING USER 4 -
 
 User ID : 1, Name : Sourasish, Age : 22, Gender : Male
 Hobbies : Reading 
-Friends : Sagnik Aviroopa Anushka
+Friends : Sagnik Oishik Anushka Aviroopa Shinjini
 Blocked Users :
 
 -------------------------------------------------------------------------------------------------------------------------
@@ -120,16 +130,22 @@ Blocked Users :
 DELETE USER FUNCTION OUTPUT -
 
 Before deleting user with ID 1 :
-User ID : 4, Name : Sagnik
-User ID : 3, Name : Aviroopa
-User ID : 2, Name : Anushka
 User ID : 1, Name : Sourasish
+User ID : 2, Name : Anushka
+User ID : 3, Name : Aviroopa
+User ID : 4, Name : Sagnik
+User ID : 5, Name : Abhranil
+User ID : 6, Name : Shinjini
+User ID : 7, Name : Oishik
 
 Deleting user with ID 1 : Sourasish
 
 After deleting user with ID 1 :
-User ID : 4, Name : Sagnik
-User ID : 3, Name : Aviroopa
 User ID : 2, Name : Anushka
+User ID : 3, Name : Aviroopa
+User ID : 4, Name : Sagnik
+User ID : 5, Name : Abhranil
+User ID : 6, Name : Shinjini
+User ID : 7, Name : Oishik
 
 -------------------------------------------------------------------------------------------------------------------------
