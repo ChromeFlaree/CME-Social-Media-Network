@@ -57,11 +57,14 @@ Blocked Users :
 
 POST FUNCTION OUTPUT - 
 
+PRIVATE POST -
+
 Sourasish created a new post.
 
 Anushka liked the post.
 Aviroopa liked the post.
 Oishik liked the post.
+Error: Abhranil cannot like the post.
 Error: Sagnik cannot like the post.
 
 Anushka commented on the post: Looks amazing!
@@ -77,6 +80,23 @@ Error : Cannot like since post has been deleted.
 Error : Cannot comment since post has been deleted.
 Posts by Sourasish :
 This post has been deleted.
+
+PUBLIC POST -
+
+Anushka created a new post.
+
+Sourasish liked the post.
+Abhranil liked the post.
+Oishik liked the post.
+Sagnik liked the post.
+
+Sagnik commented on the post: Kohli will score a century.
+
+Post by Anushka : Watching ICC World Cup Final!
+Likes : 4
+Sagnik Oishik Abhranil Sourasish
+Comments : 1
+Sagnik : Kohli will score a century.
 
 -------------------------------------------------------------------------------------------------------------------------
 
