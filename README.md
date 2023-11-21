@@ -1,6 +1,6 @@
 # CME-Social-Media-Network
 
-This project simulates a basic social network system where users can create accounts, add friends, form group chats, send messages, and perform various social interactions.
+This project simulates a basic social network system implemented in C++. It provides a basic framework for users to create accounts, connect with friends, join groups, and interact with posts. The project uses object-oriented principles to model users, groups, posts, and various interactions within a social network.
 
 ## Features
 
@@ -17,7 +17,7 @@ This project simulates a basic social network system where users can create acco
  
 - **Posts**
   - Create and share posts
-  - Friends can like and comment on post
+  - Like and comment on posts
   - Display post information
 
 - **Social Network Search**
@@ -26,3 +26,27 @@ This project simulates a basic social network system where users can create acco
 
 - **User Suggestions**
   - Get suggested friends based on the user's friend network
+
+## How to Use
+
+- **Clone**
+  - git clone https://github.com/ChromeFlaree/CME-Social-Media-Network.git
+
+- **Compile**
+  - g++ *.cpp -o social_network_app
+
+- **Run**
+  - ./social_network_app
+
+## Requirements
+
+- C++ Compiler
+- Standard Template Library (STL) Support
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
+
+## Acknowledgment
+
+I want to take a moment to express my appreciation for the incredible support and mentorship provided by **Mr. Mahesh Gutur Subbarayasetty**. I am truly grateful for the opportunity to work under their guidance. Their insights and feedback were invaluable in shaping this project.
