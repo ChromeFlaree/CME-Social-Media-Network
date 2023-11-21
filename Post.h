@@ -16,11 +16,13 @@ public:
     Post(const shared_ptr<User> author, const string content);
     void addLike(const shared_ptr<User> user);
     void addComment(const shared_ptr<User> user, const string comment);
+    void deletePost();
     void displayDetails() const;
 
 private:
     shared_ptr<User> author;
     string content;
+    bool deleted;
     unordered_set<shared_ptr<User>> likes;
     vector<pair<shared_ptr<User>, string>> comments;
 };
