@@ -84,19 +84,19 @@ int main() {
     cout << "Users with name 'Sourasish' :" << endl;
     vector<shared_ptr<User>> usersByName = socialNetwork.searchByName("Sourasish");
     for (const auto user : usersByName) {
-        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
+        cout << "User ID : " << user->getId() << ", Name : " << user->getName() << endl;
     }
 
     cout << "\nUsers with age 30 :" << endl;
     vector<shared_ptr<User>> usersByAge = socialNetwork.searchByAge(30);
     for (const auto user : usersByAge) {
-        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
+        cout << "User ID : " << user->getId() << ", Name : " << user->getName() << endl;
     }
 
     cout << "\nUsers with hobbies 'Jogging' :" << endl;
     vector<shared_ptr<User>> usersByHobbies = socialNetwork.searchByHobbies("Jogging");
     for (const auto user : usersByHobbies) {
-        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
+        cout << "User ID : " << user->getId() << ", Name : " << user->getName() << endl;
     }
 
     cout << "\nFriends of Sourasish : ";
