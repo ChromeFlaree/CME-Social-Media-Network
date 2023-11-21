@@ -10,20 +10,31 @@ int main() {
     auto user2 = make_shared<User>(2, "Anushka", 20, "Female");
     auto user3 = make_shared<User>(3, "Aviroopa", 21, "Female");
     auto user4 = make_shared<User>(4, "Sagnik", 30, "Male");
+    auto user5 = make_shared<User>(5, "Abhranil", 26, "Male");
+    auto user6 = make_shared<User>(6, "Shinjini", 28, "Female");
+    auto user7 = make_shared<User>(7, "Oishik", 30, "Male");
 
     socialNetwork.addUser(user1);
     socialNetwork.addUser(user2);
     socialNetwork.addUser(user3);
     socialNetwork.addUser(user4);
+    socialNetwork.addUser(user5);
+    socialNetwork.addUser(user6);
+    socialNetwork.addUser(user7);
     
     user1->addHobby({"Reading"});
     user4->addHobby({"Gardening", "Jogging"});
     user3->addHobby({"Jogging"});
+    user5->addHobby({"Singing", "Dancing"});
+    user7->addHobby({"Jogging"});
     
     user1->addFriend(user2);
-    user1->addFriend(user4);
     user1->addFriend(user3);
+    user1->addFriend(user4);
+    user1->addFriend(user6);
+    user1->addFriend(user7);
     user4->addFriend(user3);
+    user2->addFriend(user6);
 
     user1->blockUser(user4);
     cout << endl;
@@ -56,8 +67,18 @@ int main() {
     user1->createPost("Enjoying a sunny day!");
     user1->getPosts().front()->addLike(user2);
     user1->getPosts().front()->addLike(user3);
+    user1->getPosts().front()->addLike(user7);
     user1->getPosts().front()->addLike(user4);
     user1->getPosts().front()->addComment(user2, "Looks amazing!");
+    user1->displayPosts();
+
+    auto posts = user1->getPosts();
+    if (!posts.empty()) {
+        posts.front()->deletePost();
+    }
+
+    user1->getPosts().front()->addLike(user6);
+    user1->getPosts().front()->addComment(user6, "Interesting!");
     user1->displayPosts();
 
     cout << "Users with name 'Sourasish' :" << endl;
