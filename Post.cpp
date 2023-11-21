@@ -2,12 +2,12 @@
 #include "User.h"
 using namespace std;
 
-Post::Post(const shared_ptr<User> author, const string content) : author(author), content(content) {}
+Post::Post(const shared_ptr<User> author, const string content, PostPrivacy privacy) : author(author), content(content), privacy(privacy), deleted(false) {}
 
 void Post::addLike(const shared_ptr<User> user) {
     if (deleted) {
         cerr << "Error : Cannot like since post has been deleted." << endl;
-    } else if (user != author && author->isFriend(user) && !author->isBlocked(user)) {
+    } else if ((privacy == PUBLIC || author->isFriend(user)) && !author->isBlocked(user)) {
         likes.insert(user);
         cout << user->getName() << " liked the post." << endl;
     } else {
@@ -18,7 +18,7 @@ void Post::addLike(const shared_ptr<User> user) {
 void Post::addComment(const shared_ptr<User> user, const string comment) {
     if (deleted) {
         cerr << "Error : Cannot comment since post has been deleted." << endl;
-    } else if (user != author && author->isFriend(user) && !author->isBlocked(user)) {
+    } else if ((privacy == PUBLIC || author->isFriend(user)) && !author->isBlocked(user)) {
         comments.push_back({user, comment});
         cout << user->getName() << " commented on the post: " << comment << endl;
     } else {
