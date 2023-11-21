@@ -15,7 +15,7 @@ This project simulates a basic social network system implemented in C++. It prov
   - Send messages to group members
   - Leave group chats
  
-- **Posts**
+- **Post**
   - Create and share posts
   - Like and comment on posts
   - Display post information
