@@ -64,10 +64,11 @@ int main() {
     user4->printDetails();
     cout << endl;
 
-    user1->createPost("Enjoying a sunny day!");
+    user1->createPost("Enjoying a sunny day!", PostPrivacy::PRIVATE);
     user1->getPosts().front()->addLike(user2);
     user1->getPosts().front()->addLike(user3);
     user1->getPosts().front()->addLike(user7);
+    user1->getPosts().front()->addLike(user5);
     user1->getPosts().front()->addLike(user4);
     user1->getPosts().front()->addComment(user2, "Looks amazing!");
     user1->displayPosts();
@@ -81,22 +82,30 @@ int main() {
     user1->getPosts().front()->addComment(user6, "Interesting!");
     user1->displayPosts();
 
+    user2->createPost("Watching ICC World Cup Final!", PostPrivacy::PUBLIC);
+    user2->getPosts().front()->addLike(user1);
+    user2->getPosts().front()->addLike(user5);
+    user2->getPosts().front()->addLike(user7);
+    user2->getPosts().front()->addLike(user4);
+    user2->getPosts().front()->addComment(user4, "Kohli will score a century.");
+    user2->displayPosts();
+
     cout << "Users with name 'Sourasish' :" << endl;
     vector<shared_ptr<User>> usersByName = socialNetwork.searchByName("Sourasish");
     for (const auto user : usersByName) {
-        cout << "User ID : " << user->getId() << ", Name : " << user->getName() << endl;
+        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
     }
 
     cout << "\nUsers with age 30 :" << endl;
     vector<shared_ptr<User>> usersByAge = socialNetwork.searchByAge(30);
     for (const auto user : usersByAge) {
-        cout << "User ID : " << user->getId() << ", Name : " << user->getName() << endl;
+        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
     }
 
     cout << "\nUsers with hobbies 'Jogging' :" << endl;
     vector<shared_ptr<User>> usersByHobbies = socialNetwork.searchByHobbies("Jogging");
     for (const auto user : usersByHobbies) {
-        cout << "User ID : " << user->getId() << ", Name : " << user->getName() << endl;
+        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
     }
 
     cout << "\nFriends of Sourasish : ";
