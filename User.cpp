@@ -66,7 +66,7 @@ void User::suggestFriends() const {
     for (const auto friendUser : friends) {
         if (blockedUsers.find(friendUser) == blockedUsers.end()) {
             for (const auto friendOfFriend : friendUser->friends) {
-                if (blockedUsers.find(friendOfFriend) == blockedUsers.end() && friendOfFriend != shared_from_this()) {
+                if (blockedUsers.find(friendOfFriend) == blockedUsers.end() && friendOfFriend != shared_from_this() && friends.find(friendOfFriend) == friends.end()) {
                     cout << "User ID : " << friendOfFriend->getId() << ", Name : " << friendOfFriend->getName() << endl;
                 }
             }
@@ -154,8 +154,8 @@ const vector<shared_ptr<Post>> User::getPosts() const {
     return posts;
 }
 
-void User::createPost(const string content) {
-    auto post = make_shared<Post>(shared_from_this(), content);
+void User::createPost(const string content, PostPrivacy privacy) {
+    auto post = make_shared<Post>(shared_from_this(), content, privacy);
     posts.push_back(post);
     cout << getName() << " created a new post." << endl;
 }
