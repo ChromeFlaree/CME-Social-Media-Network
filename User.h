@@ -7,6 +7,7 @@
 #include <unordered_map>
 #include <vector>
 #include <memory>
+#include "Post.h"
 using namespace std;
 
 class GroupChat;
@@ -42,7 +43,7 @@ public:
     void leaveGroup(const shared_ptr<GroupChat> group);
     void sendMessageToGroup(const shared_ptr<GroupChat> group, const string message);
 
-    void createPost(const string content);
+    void createPost(const string content, PostPrivacy privacy);
     void displayPosts() const;
     const vector<shared_ptr<Post>> getPosts() const;
 
