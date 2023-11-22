@@ -25,9 +25,12 @@ unordered_map<int, shared_ptr<User>> SocialNetwork::getUsers() const {
 
 vector<shared_ptr<User>> SocialNetwork::searchByName(const string name) {
     vector<shared_ptr<User>> result;
+    string lowercaseName = name;
+    transform(lowercaseName.begin(), lowercaseName.end(), lowercaseName.begin(), ::tolower);
     for (const auto userPair : users) {
-        const string userName = userPair.second->getName();
-        if (userName.find(name) != string::npos) {
+        string lowercaseUserName = userPair.second->getName();
+        transform(lowercaseUserName.begin(), lowercaseUserName.end(), lowercaseUserName.begin(), ::tolower);
+        if (lowercaseUserName.find(lowercaseName) != string::npos) {
             result.push_back(userPair.second);
         }
     }
