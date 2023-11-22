@@ -52,6 +52,8 @@ int main() {
     user4->leaveGroup(*(user1->getGroups().begin()));
     user2->sendMessageToGroup(*(user1->getGroups().begin()), "Testing Message");
 
+    cout << endl;
+
     user2->suggestFriends();
     cout << endl;
 
@@ -65,13 +67,17 @@ int main() {
     cout << endl;
 
     user1->createPost("Enjoying a sunny day!", PostPrivacy::PRIVATE);
+    cout << endl;
     user1->getPosts().front()->addLike(user2);
     user1->getPosts().front()->addLike(user3);
     user1->getPosts().front()->addLike(user7);
     user1->getPosts().front()->addLike(user5);
     user1->getPosts().front()->addLike(user4);
+    cout << endl;
     user1->getPosts().front()->addComment(user2, "Looks amazing!");
+    cout << endl;
     user1->displayPosts();
+    cout << endl;
 
     auto posts = user1->getPosts();
     if (!posts.empty()) {
@@ -81,14 +87,18 @@ int main() {
     user1->getPosts().front()->addLike(user6);
     user1->getPosts().front()->addComment(user6, "Interesting!");
     user1->displayPosts();
+    cout << endl;
 
     user2->createPost("Watching ICC World Cup Final!", PostPrivacy::PUBLIC);
+    cout << endl;
     user2->getPosts().front()->addLike(user1);
     user2->getPosts().front()->addLike(user5);
     user2->getPosts().front()->addLike(user7);
     user2->getPosts().front()->addLike(user4);
+    cout << endl;
     user2->getPosts().front()->addComment(user4, "Kohli will score a century.");
     user2->displayPosts();
+    cout << endl;
 
     cout << "Users with name 'Sourasish' :" << endl;
     vector<shared_ptr<User>> usersByName1 = socialNetwork.searchByName("Sourasish");
@@ -96,7 +106,7 @@ int main() {
         cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
     }
 
-    cout << "Users with name 'An' :" << endl;
+    cout << "\nUsers with name 'An' :" << endl;
     vector<shared_ptr<User>> usersByName2 = socialNetwork.searchByName("An");
     for (const auto user : usersByName2) {
         cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
@@ -126,9 +136,10 @@ int main() {
     for (const auto friendId : sagnikFriends) {
         cout << friendId << " ";
     }
-    cout << endl;
-
+    
+    cout << "\n";
     user1->unblockUser(user4);
+    cout << "\n";
 
     user1->printDetails();
     cout << endl;
