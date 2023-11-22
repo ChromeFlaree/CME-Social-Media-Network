@@ -26,7 +26,8 @@ unordered_map<int, shared_ptr<User>> SocialNetwork::getUsers() const {
 vector<shared_ptr<User>> SocialNetwork::searchByName(const string name) {
     vector<shared_ptr<User>> result;
     for (const auto userPair : users) {
-        if (userPair.second->getName() == name) {
+        const string userName = userPair.second->getName();
+        if (userName.find(name) != string::npos) {
             result.push_back(userPair.second);
         }
     }
