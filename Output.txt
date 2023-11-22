@@ -107,6 +107,14 @@ User ID : 1, Name : Sourasish
 
 -------------------------------------------------------------------------------------------------------------------------
 
+SEARCH BY NAME FUNCTION FOR PARTIAL MATCH OUTPUT -
+
+Users with name 'An' :
+User ID: 2, Name: Anushka
+User ID: 5, Name: Abhranil
+
+-------------------------------------------------------------------------------------------------------------------------
+
 SEARCH BY AGE FUNCTION OUTPUT -
 
 Users with age 30 :
