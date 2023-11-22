@@ -91,8 +91,14 @@ int main() {
     user2->displayPosts();
 
     cout << "Users with name 'Sourasish' :" << endl;
-    vector<shared_ptr<User>> usersByName = socialNetwork.searchByName("Sourasish");
-    for (const auto user : usersByName) {
+    vector<shared_ptr<User>> usersByName1 = socialNetwork.searchByName("Sourasish");
+    for (const auto user : usersByName1) {
+        cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
+    }
+
+    cout << "Users with name 'An' :" << endl;
+    vector<shared_ptr<User>> usersByName2 = socialNetwork.searchByName("An");
+    for (const auto user : usersByName2) {
         cout << "User ID: " << user->getId() << ", Name: " << user->getName() << endl;
     }
 
