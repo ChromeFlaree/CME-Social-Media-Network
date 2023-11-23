@@ -23,7 +23,7 @@ Error : Anushka cannot send message. User must be a member of the group.
 
 -------------------------------------------------------------------------------------------------------------------------
 
-FRIEND SUGGESTION FUNCTION OUTPUT FOR USER ID 2 -
+FRIEND SUGGESTION FUNCTION OUTPUT -
 
 Suggested friends for Anushka :
 User ID : 3, Name : Aviroopa
