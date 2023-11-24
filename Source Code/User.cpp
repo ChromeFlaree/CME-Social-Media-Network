@@ -22,6 +22,16 @@ string User::getGender() const {
     return gender;
 }
 
+void User::setUserCredentials(const string username, const string password) {
+    this->username = username;
+    this->password = password;
+    userAuth.registerUser(username, password);
+}
+
+bool User::authenticateUser(const string username, const string password) const {
+    return userAuth.authenticate(username, password);
+}
+
 void User::setHeight(double height) {
     this->height = height;
 }
