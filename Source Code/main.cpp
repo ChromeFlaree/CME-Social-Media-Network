@@ -14,13 +14,21 @@ int main() {
     auto user6 = make_shared<User>(6, "Shinjini", 28, "Female");
     auto user7 = make_shared<User>(7, "Oishik", 30, "Male");
 
-    socialNetwork.addUser(user1);
-    socialNetwork.addUser(user2);
-    socialNetwork.addUser(user3);
-    socialNetwork.addUser(user4);
-    socialNetwork.addUser(user5);
-    socialNetwork.addUser(user6);
-    socialNetwork.addUser(user7);
+    user1->setUserCredentials("sourasish", "password1");
+    user2->setUserCredentials("anushka", "password2");
+    user3->setUserCredentials("aviroopa", "password3");
+    user4->setUserCredentials("sagnik", "password4");
+    user5->setUserCredentials("abhranil", "password5");
+    user6->setUserCredentials("shinjini", "password6");
+    user7->setUserCredentials("oishik", "password7");
+
+    socialNetwork.addUser(user1, "sourasish", "password1");
+    socialNetwork.addUser(user2, "anushka", "password2");
+    socialNetwork.addUser(user3, "aviroopa", "password2");
+    socialNetwork.addUser(user4, "sagnik", "password4");
+    socialNetwork.addUser(user5, "abhranil", "password5");
+    socialNetwork.addUser(user6, "shinjini", "password6");
+    socialNetwork.addUser(user7, "oishik", "password7");
     
     user1->addHobby({"Reading"});
     user4->addHobby({"Gardening", "Jogging"});
