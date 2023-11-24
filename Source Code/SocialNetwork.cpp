@@ -2,10 +2,16 @@
 #include "User.h"
 using namespace std;
 
-void SocialNetwork::addUser(shared_ptr<User> user) {
-    auto result = users.emplace(user->getId(), user);
-    if (!result.second) {
-        cout << "Error: User with ID " << user->getId() << " already exists. Choose a unique ID." << endl;
+void SocialNetwork::addUser(shared_ptr<User> user, const string username, const string password) {
+    if (user->authenticateUser(username, password)) {
+        auto result = users.emplace(user->getId(), user);
+        if (!result.second) {
+            cout << "Error: User with ID " << user->getId() << " already exists. Choose a unique ID." << endl;
+        } else {
+            cout << user->getName() << " successfully authenticated and added to the social network." << endl;
+        }
+    } else {
+        cerr << "Error : User authentication failed. User not added to the social network." << endl;
     }
 }
 
