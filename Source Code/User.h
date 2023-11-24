@@ -8,10 +8,12 @@
 #include <vector>
 #include <memory>
 #include "Post.h"
+#include "UserAuthentication.h"
 using namespace std;
 
 class GroupChat;
 class Post;
+class UserAuthentication;
 
 class User : public std::enable_shared_from_this<User> {
 public:
@@ -22,6 +24,8 @@ public:
     int getAge() const;
     string getGender() const;
 
+    void setUserCredentials(const string username, const string password);
+    bool authenticateUser(const string username, const string password) const;
     void setHeight(double height);
     void addHobby(const unordered_set<string> newHobbies);
     void addFriend(const shared_ptr<User> friendUser);
@@ -53,6 +57,9 @@ private:
     int age;
     string gender;
     double height = 0.0;
+    UserAuthentication userAuth;
+    string username;
+    string password;
     unordered_set<string> hobbies;
     unordered_set<shared_ptr<User>> friends;
     unordered_set<shared_ptr<User>> blockedUsers;
