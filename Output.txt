@@ -1,3 +1,15 @@
+ADDING USERS TO SOCIAL NETWORK OUTPUT - 
+
+Sourasish successfully authenticated and added to the social network.
+Anushka successfully authenticated and added to the social network.
+Error : User authentication failed. Avirropa not added to the social network.
+Sagnik successfully authenticated and added to the social network.
+Abhranil successfully authenticated and added to the social network.
+Shinjini successfully authenticated and added to the social network.
+Oishik successfully authenticated and added to the social network.
+
+-------------------------------------------------------------------------------------------------------------------------
+
 BLOCK FRIEND FUNCTION OUTPUT WHEN USER 1 BLOCKS USER 4 -
 
 Sourasish blocked user with ID 4 : Sagnik
@@ -128,7 +140,6 @@ SEARCH BY HOBBIES FUNCTION OUTPUT -
 Users with hobbies 'Jogging' :
 User ID : 7, Name : Oishik
 User ID : 4, Name : Sagnik
-User ID : 3, Name : Aviroopa
 
 -------------------------------------------------------------------------------------------------------------------------
 
@@ -160,7 +171,6 @@ DELETE USER FUNCTION OUTPUT -
 Before deleting user with ID 1 :
 User ID : 1, Name : Sourasish
 User ID : 2, Name : Anushka
-User ID : 3, Name : Aviroopa
 User ID : 4, Name : Sagnik
 User ID : 5, Name : Abhranil
 User ID : 6, Name : Shinjini
@@ -170,7 +180,6 @@ Deleting user with ID 1 : Sourasish
 
 After deleting user with ID 1 :
 User ID : 2, Name : Anushka
-User ID : 3, Name : Aviroopa
 User ID : 4, Name : Sagnik
 User ID : 5, Name : Abhranil
 User ID : 6, Name : Shinjini
