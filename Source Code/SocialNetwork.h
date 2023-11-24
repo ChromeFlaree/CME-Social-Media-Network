@@ -13,7 +13,7 @@ class User;
 
 class SocialNetwork {
 public:
-    void addUser(shared_ptr<User> user);
+    void addUser(const shared_ptr<User> user, const string username, const string password);
     void deleteUser(int id);
     unordered_map<int, shared_ptr<User>> getUsers() const;
     vector<shared_ptr<User>> searchByName(const string name);
