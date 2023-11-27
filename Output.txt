@@ -2,7 +2,7 @@ ADDING USERS TO SOCIAL NETWORK OUTPUT -
 
 Sourasish successfully authenticated and added to the social network.
 Anushka successfully authenticated and added to the social network.
-Error : User authentication failed. Avirropa not added to the social network.
+Error : User authentication failed. Aviroopa not added to the social network.
 Sagnik successfully authenticated and added to the social network.
 Abhranil successfully authenticated and added to the social network.
 Shinjini successfully authenticated and added to the social network.
